@@ -67,6 +67,7 @@ const stories: Story[] = [
   },
 ];
 
+{/* Componente de Historias */}
 const Stories = () => {
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
@@ -172,7 +173,7 @@ const Stories = () => {
               setCurrentMediaIndex(0);
               setProgress(0);
             }}
-            className="flex-shrink-0 flex flex-col items-center gap-1"
+            className="flex-shrink-0 flex flex-col items-center gap-1 active:scale-90 transition-transform duration-150 ease-out"
           >
             <div className="relative">
               {/* Colores de Instagram */}

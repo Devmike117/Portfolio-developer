@@ -7,6 +7,7 @@ import {
 	FaRegUser,
 	FaSteam,
 	FaTwitch,
+	FaApple,
 } from 'react-icons/fa';
 import { IoGridOutline } from 'react-icons/io5';
 import type { Project } from '../types';
@@ -44,41 +45,49 @@ export const personalInfo = {
   },
 	socialLinks: [
 		{
-			id:1,
+			id: 1,
+			name: 'Apple',
+			url: 'https://music.apple.com/mx/playlist/replay-2025/pl.rp-E5l5tRyVOXk2',
+			icon: <FaApple size={30} />,
+		},
+		{
+			id: 2,
 			name: 'Instagram',
 			url: 'https://www.instagram.com/devmike117/',
 			icon: <FaInstagram size={30} />,
 		},
 		{
-			id: 2,
+			id: 3,
 			name: 'Pinterest',
 			url: 'https://www.pinterest.com/devmike117/',
 			icon: <FaPinterest size={30} />,
 		},
 		{
-			id: 3,
+			id: 4,
 			name: 'GitHub',
 			url: 'https://github.com/Devmike117',
 			icon: <FaGithub size={30} />,
 		},
 		{
-			id: 4,
+			id: 5,
 			name: 'LinkedIn',
 			url: 'https://www.linkedin.com/in/miguelgabrielhndz/',
 			icon: <FaLinkedin size={30} />,
 		},
 		{
-			id: 5,
+			id: 6,
 			name: 'Steam',
 			url: 'https://steamcommunity.com/id/mikedarkness',
 			icon: <FaSteam size={30} />,	
 		},
-		{
-			id: 6,
-			name: 'Twitch',
-			url: 'https://www.twitch.tv/devmike117',
-			icon: <FaTwitch size={30} />,
-		},
+
+		// Comentado temporalmente
+		//{
+		//	id: 7,
+		//	name: 'Twitch',
+		//	url: 'https://www.twitch.tv/devmike117',
+		//	icon: <FaTwitch size={30} />,
+		//},
 	],
 	photoSrc: '/foto.webp',
 };
