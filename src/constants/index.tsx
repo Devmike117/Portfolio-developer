@@ -47,7 +47,7 @@ export const personalInfo = {
 		{
 			id: 1,
 			name: 'Apple',
-			url: 'https://music.apple.com/mx/playlist/replay-2025/pl.rp-E5l5tRyVOXk2',
+			url: 'https://music.apple.com/mx/playlist/mix-en-loop/pl.pm-7cd15d345a6ed1efe015be685ac6090d',
 			icon: <FaApple size={30} />,
 		},
 		{
