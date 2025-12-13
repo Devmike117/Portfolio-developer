@@ -69,7 +69,7 @@ function App() {
 				<div className='flex justify-end mb-6'>
 					<button
 						onClick={() => setDarkMode(!darkMode)}
-						className='p-2 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors'
+						className='p-2 rounded-full bg-slate-200/50 dark:bg-slate-800/50 hover:bg-slate-300/70 dark:hover:bg-slate-700/70 transition-colors border border-slate-300/30 dark:border-slate-600/30'
 						aria-label='Toggle dark mode'
 					>
 						{darkMode ? (

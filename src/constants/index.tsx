@@ -112,6 +112,36 @@ export const tabs = [
 
 export const projects: Project[] = [
 	{
+		id: 0,
+		name: 'Plataforma web para restaurante',
+		description:
+			'Plataforma web moderna y responsiva con sistema de pedidos en línea, reservas, integración de pagos con Stripe, dashboard administrativo con analytics, generación de recibos PDF automáticos y notificaciones por email.',
+		technologies: [
+						'React',
+			'TypeScript',
+			'Vite',
+			'shadcn/ui',
+			'Tailwind CSS',
+			'Framer Motion',
+			'React Router',
+			'Context API',
+			'TanStack Query',
+			'Node.js',
+			'Express',
+			'CORS',
+			'MongoDB',
+			'PostgreSQL',
+			'Axios',
+			'EmailJS',
+			'Stripe API',
+			'Chart.js',
+			'PDFKit',
+		],
+		projectUrl: 'https://sistema-restaurante-4wvy.vercel.app/',
+		budget: 'Proyecto realizado por: $4,722 USD o $85,000 MXN (sistema de pedidos, reservas, integración de pagos y dashboard administrativo). Para requerimientos adicionales o personalizaciones específicas, el costo aumenta o disminuye según el alcance solicitado.',
+		imageSrc: 'https://raw.githubusercontent.com/Devmike117/Devmike117/refs/heads/main/assets/Systemrestaurant.webp',
+	},
+	{
 		id: 1,
 		name: 'Medi-IA',
 		description:
@@ -202,25 +232,61 @@ export const projects: Project[] = [
 		githubUrl: 'https://github.com/Devmike117/modelo-deteccion-de-rostros',
 		imageSrc: '/project5.png',
 	},
-	{
-		id: 6,
-		name: 'Generador de Códigos QR',
-		description:
-			'Herramienta que permite crear códigos QR personalizados en segundos, a partir de texto, enlaces o datos de contacto. Funciona sin conexión a internet y es ideal para compartir información de forma rápida y moderna.',
-		technologies: [
-			'Python',
-			'tkinter',
-			'qrcode',
-			'Pillow',
-			'pyinstaller',
-		],
-		projectUrl: 'https://github.com/Devmike117/Generador-codigos-QR/releases/tag/VV1.0',
-		githubUrl: 'https://github.com/Devmike117/Generador-codigos-QR',
-		imageSrc: '/project6.png',
-	},
+	//{
+	//	id: 6,
+	//	name: 'Generador de Códigos QR',
+	//	description:
+	//		'Herramienta que permite crear códigos QR personalizados en segundos, a partir de texto, enlaces o datos de contacto. Funciona sin conexión a internet y es ideal para compartir información de forma rápida y moderna.',
+	//	technologies: [
+	//		'Python',
+	//		'tkinter',
+	//		'qrcode',
+	//		'Pillow',
+	//		'pyinstaller',
+	//	],
+	//	projectUrl: 'https://github.com/Devmike117/Generador-codigos-QR/releases/tag/VV1.0',
+	//	githubUrl: 'https://github.com/Devmike117/Generador-codigos-QR',
+	//	imageSrc: '/project6.png',
+	//},
 ];
 
 export const experience = [
+	{
+		id: 0,
+		position: 'Desarrollador Full-Stack (Freelance)',
+		timeRange: 'Nov 2025 - Dic 2025',
+		companyName: 'Cadena de restaurante.',
+		companyLocation: 'Toluca de Lerdo, México',
+		description:
+			'Desarrollo de una plataforma web que permite realizar pedidos en línea, diferentes métodos de pago, gestionar reservas y recibir confirmaciones automáticas por correo electrónico.\n\n' +
+			'• Interfaz amigable para usuarios y administradores, facilitando la navegación y el manejo de pedidos.\n\n' +
+			'• Integración de pasarelas de pago seguras para garantizar transacciones confiables.\n\n' +
+			'• Panel administrativo para monitorear pedidos, gestionar menús y analizar estadísticas de ventas. \n\n' +
+			'• Exportación de datos a formatos CSV y PDF para facilitar la contabilidad y el análisis de ventas. \n\n' +
+			'• Recibos digitales generados automáticamente y enviados por correo electrónico tras cada compra.',
+
+		technologiesUsed: [
+			'React',
+			'TypeScript',
+			'Vite',
+			'shadcn/ui',
+			'Tailwind CSS',
+			'Framer Motion',
+			'React Router',
+			'Context API',
+			'TanStack Query',
+			'Node.js',
+			'Express',
+			'CORS',
+			'MongoDB',
+			'PostgreSQL',
+			'Axios',
+			'EmailJS',
+			'Stripe API',
+			'Chart.js',
+			'PDFKit',
+		],
+	},
 	{
 		id: 1,
 		position: 'Front-end developer',
