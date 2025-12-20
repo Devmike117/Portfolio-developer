@@ -1,3 +1,31 @@
+[[redirects]]
+  from = "/*.png"
+  to = "/blocked-image.svg"
+  status = 200
+  force = false
+  conditions = {Role = ["public"]}
+
+[[redirects]]
+  from = "/*.jpg"
+  to = "/blocked-image.svg"
+  status = 200
+  force = false
+  conditions = {Role = ["public"]}
+
+[[redirects]]
+  from = "/*.jpeg"
+  to = "/blocked-image.svg"
+  status = 200
+  force = false
+  conditions = {Role = ["public"]}
+
+[[redirects]]
+  from = "/*.webp"
+  to = "/blocked-image.svg"
+  status = 200
+  force = false
+  conditions = {Role = ["public"]}
+
 [[headers]]
   for = "/*.png"
   [headers.values]
