@@ -1,8 +1,11 @@
 # Bloquear bots sin referrer
 /*  /blocked.html  403!  Referer=""
 
-# Bloquear acceso directo a imágenes
-/img/*  /blocked.html  403!  Referer="*"
+# Bloquear hotlinking de imágenes desde dominios no autorizados
+/*.png  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
+/*.jpg  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
+/*.jpeg  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
+/*.webp  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
 
 # Bloquear bots generales
 /*  /blocked.html  403!  User-Agent="*bot*"
@@ -10,7 +13,7 @@
 /*  /blocked.html  403!  User-Agent="*spider*"
 /*  /blocked.html  403!  User-Agent="*scrape*"
 
-# Bloquear IAs específicas
+# Bloquear IAs y herramientas de automatización
 /*  /blocked.html  403!  User-Agent="*GPTBot*"
 /*  /blocked.html  403!  User-Agent="*ChatGPT*"
 /*  /blocked.html  403!  User-Agent="*ClaudeBot*"
@@ -23,7 +26,7 @@
 /*  /blocked.html  403!  User-Agent="*FacebookBot*"
 /*  /blocked.html  403!  User-Agent="*facebookexternalhit*"
 
-# Bloquear herramientas de scraping comunes
+# Bloquear herramientas de scraping 
 /*  /blocked.html  403!  User-Agent="*scrapy*"
 /*  /blocked.html  403!  User-Agent="*selenium*"
 /*  /blocked.html  403!  User-Agent="*puppeteer*"
