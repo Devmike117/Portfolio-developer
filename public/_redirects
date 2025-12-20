@@ -1,12 +1,6 @@
 # Bloquear bots sin referrer
 /*  /blocked.html  403!  Referer=""
 
-# Bloquear hotlinking de imágenes desde dominios no autorizados
-/*.png  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
-/*.jpg  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
-/*.jpeg  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
-/*.webp  /blocked.html  403!  Referer=!devmike117.netlify.app,!localhost
-
 # Bloquear bots generales
 /*  /blocked.html  403!  User-Agent="*bot*"
 /*  /blocked.html  403!  User-Agent="*crawler*"
