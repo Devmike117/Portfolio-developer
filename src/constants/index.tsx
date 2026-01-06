@@ -117,7 +117,7 @@ export const projects: Project[] = [
 		description:
 			'Plataforma web moderna y responsiva con sistema de pedidos en línea, reservas, integración de pagos con Stripe, dashboard administrativo con analytics, generación de recibos PDF automáticos y notificaciones por email.',
 		technologies: [
-						'React',
+			'React',
 			'TypeScript',
 			'Vite',
 			'shadcn/ui',
@@ -161,6 +161,40 @@ export const projects: Project[] = [
 	},
 	{
 		id: 2,
+		name: 'Devmike117 Store',
+		description:
+			'Devmike117 Store es una plataforma web que combina tienda de productos digitales (licencias de juegos, software, consoles) con servicios técnicos profesionales (desarrollo web, reparación de equipos, recuperación de datos).',
+		technologies: [
+			'Vite 7',
+			'React 19',
+			'TypeScript',
+			'Tailwind CSS 3',
+			'React Router DOM 7',
+			'Framer Motion',
+			'React Icons',
+			'Supabase',
+			'Supabase Auth',
+			'PostgreSQL',
+			'Axios',
+			'Stripe',
+			'Apple Pay',
+			'Google Pay',
+			'@stripe/react-stripe-js',
+			'@stripe/stripe-js',
+			'Google Pay API',
+			'Radix UI',
+			'Class Variance Authority (CVA)',
+			'Tailwind Merge',
+			'clsx',
+			'jsPDF',
+			'jspdf-autotable',
+		],
+		projectUrl: 'https://devmike117store.vercel.app/',
+		githubUrl: 'https://github.com/Devmike117/Headless-Store',
+		imageSrc: '/Project02.png',
+	},
+	{
+		id: 3,
 		name: 'Quitafondo',
 		description:
 			'Aplicación de escritorio que elimina fondos de imágenes automáticamente y sin conexión, usando redes neuronales. Ofrece edición manual, compatibilidad con múltiples formatos y preserva la calidad sin subir archivos a terceros.',
@@ -176,7 +210,7 @@ export const projects: Project[] = [
 		imageSrc: '/project2.jpg',
 	},
 	{
-		id: 3,
+		id: 4,
 		name: 'Verificador de correos electrónicos',
 		description:
 			'Herramienta de escritorio en Python que audita direcciones de correo en tiempo real. Evalúa sintaxis, servidores, autenticación y posibles intentos de phishing, todo de forma local y sin comprometer la privacidad del usuario.',
@@ -194,7 +228,7 @@ export const projects: Project[] = [
 		imageSrc: '/project3.jpg',
 	},
 	{
-		id: 4,
+		id: 5,
 		name: 'Sistema de Cifrado Web para PDFs',
 		description:
 			'Sistema que permite cifrar archivos PDF utilizando algoritmos como ECC, RSA, AES y ChaCha20. Ideal para proteger documentos sensibles en contextos educativos, profesionales o personales.',
@@ -214,7 +248,7 @@ export const projects: Project[] = [
 		imageSrc: '/project4.png',
 	},
 	{
-		id: 5,
+		id: 6,
 		name: 'Modelo de Detección de Rostros',
 		description:
 			'Identifica rostros humanos en tiempo real y en imágenes estáticas usando algoritmos Haar Cascade y redes neuronales. Funciona localmente y es útil para pruebas biométricas básicas y sistemas de autenticación.',
@@ -232,22 +266,22 @@ export const projects: Project[] = [
 		githubUrl: 'https://github.com/Devmike117/modelo-deteccion-de-rostros',
 		imageSrc: '/project5.png',
 	},
-	//{
-	//	id: 6,
-	//	name: 'Generador de Códigos QR',
-	//	description:
-	//		'Herramienta que permite crear códigos QR personalizados en segundos, a partir de texto, enlaces o datos de contacto. Funciona sin conexión a internet y es ideal para compartir información de forma rápida y moderna.',
-	//	technologies: [
-	//		'Python',
-	//		'tkinter',
-	//		'qrcode',
-	//		'Pillow',
-	//		'pyinstaller',
-	//	],
-	//	projectUrl: 'https://github.com/Devmike117/Generador-codigos-QR/releases/tag/VV1.0',
-	//	githubUrl: 'https://github.com/Devmike117/Generador-codigos-QR',
-	//	imageSrc: '/project6.png',
-	//},
+	{
+		id: 7,
+		name: 'Generador de Códigos QR',
+		description:
+			'Herramienta que permite crear códigos QR personalizados en segundos, a partir de texto, enlaces o datos de contacto. Funciona sin conexión a internet y es ideal para compartir información de forma rápida y moderna.',
+		technologies: [
+			'Python',
+			'tkinter',
+			'qrcode',
+			'Pillow',
+			'pyinstaller',
+		],
+		projectUrl: 'https://github.com/Devmike117/Generador-codigos-QR/releases/tag/VV1.0',
+		githubUrl: 'https://github.com/Devmike117/Generador-codigos-QR',
+		imageSrc: '/project6.png',
+	},
 ];
 
 export const experience = [
@@ -290,11 +324,11 @@ export const experience = [
 	{
 		id: 1,
 		position: 'Front-end developer',
-		timeRange: 'Sep 2025 – Actual',
+		timeRange: 'Sep 2025 – Ene 2026',
 		companyName: 'Gobierno de México. Centro de comando y control c2.',
 		companyLocation: 'México',
 		description:
-			'Residencia profesional donde se está desarrollando un sistema de arrestos administrativos para centros de comando y control.\n\n' +
+			'Residencia profesional donde se desarrolló un sistema de arrestos administrativos para centros de comando y control.\n\n' +
 			'• El sistema permite registrar, buscar y gestionar personas arrestadas mediante biometría facial y escaneo de huellas, generando plantillas cifradas que evitan duplicidades.\n\n' +
 			'• Su arquitectura elimina registros manuales, reduce errores y agiliza decisiones operativas.\n\n' +
 			'• Detecta reincidencias con el algoritmo de reconocimiento facial, actualiza historiales y genera reportes PDF con firma digital y código QR único.\n\n' +

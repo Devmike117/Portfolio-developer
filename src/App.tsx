@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 {/* Librería nieve: comentar cuando no sea epoca navideña :) */}
 import Snowfall from 'react-snowfall'; 
+import { Analytics } from '@vercel/analytics/react';
 import {
 	GridExperience,
 	GridProjects,
@@ -107,6 +108,7 @@ function App() {
 				{new Date().toLocaleDateString('es-MX', { timeZone: 'America/Mexico_City', year: 'numeric' })}
 			</footer>
 		</div>
+		<Analytics />
 		</>
 	);
 }

@@ -47,7 +47,7 @@ export const SteamStatus = () => {
   };
 
   return (
-    <div className="p-4 rounded-2xl border border-white/30 dark:border-gray-600/30 bg-white/10 dark:bg-slate-800/30 backdrop-blur-xl shadow-[0_4px_30px_rgba(255,255,255,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)] transition-all duration-300 w-full sm:w-80 hover:border-white/50 dark:hover:border-gray-500/50 hover:shadow-[0_4px_40px_rgba(255,255,255,0.2)] dark:hover:shadow-[0_4px_40px_rgba(0,0,0,0.4)] bg-gradient-to-br from-white/10 to-white/5 dark:from-slate-800/10 dark:to-slate-800/5">
+    <div className="p-4 rounded-2xl transition-all duration-300 w-full sm:w-80">
       {!player && !error && (
         <p className="text-gray-500 dark:text-gray-400 text-sm">Cargando estado de Steam...</p>
       )}
