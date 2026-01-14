@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Moon, Sun } from 'lucide-react';
 {/* Librería nieve: comentar cuando no sea epoca navideña :) */}
-import Snowfall from 'react-snowfall'; 
+//import Snowfall from 'react-snowfall'; 
 import { Analytics } from '@vercel/analytics/react';
 import {
 	GridExperience,
@@ -48,7 +48,7 @@ function App() {
 		<>
 			{/* Tema navideño inicio*/}
 			{/* Efecto de nieve */}
-			<div className="fixed inset-0 pointer-events-none z-40">
+			{/*<div className="fixed inset-0 pointer-events-none z-40">
 				<Snowfall
 					color={darkMode ? "white" : "#1e293b"}
 					snowflakeCount={100}
@@ -61,7 +61,7 @@ function App() {
 
 			<div className='bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors duration-300'>
 				{/* Luces de navidad inicio*/}
-				<ChristmasLights darkMode={darkMode} />
+				{/*<ChristmasLights darkMode={darkMode} />
 				{/* Luces de navidad fin*/}
 				{/* Tema navideño fin*/}
 			
