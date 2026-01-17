@@ -1,6 +1,9 @@
 # Bloquear bots sin referrer
 /*  /blocked.html  403!  Referer=""
 
+# Bloquear ASNs de centros de datos conocidos (opcional, puede bloquear tráfico legítimo)
+# /*  /blocked.html  403!  Country=XX
+
 # Bloquear bots generales
 /*  /blocked.html  403!  User-Agent="*bot*"
 /*  /blocked.html  403!  User-Agent="*crawler*"

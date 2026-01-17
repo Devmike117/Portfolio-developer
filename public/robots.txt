@@ -1,0 +1,24 @@
+# Permitir solo bots importantes de búsqueda
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+Allow: /
+
+# Bloquear todos los demás bots
+User-agent: *
+Disallow: /
+
+# Tiempo entre peticiones (en segundos)
+Crawl-delay: 10
+
+# Bloquear bots de IA específicamente
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: CCBot
+User-agent: PerplexityBot
+User-agent: Omgilibot
+Disallow: /
