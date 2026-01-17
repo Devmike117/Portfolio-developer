@@ -9,7 +9,7 @@ export const SteamStatus = () => {
     if (typeof window !== "undefined") {
       const hostname = window.location.hostname;
       // Detectar Vercel por dominio .vercel.app o mi dominio propio
-      if (hostname.includes("vercel.app") || hostname === "devmike117") {
+      if (hostname.includes("vercel.app") || hostname.includes("devmike117.com")) {
         return "/api/sendSteamStatus"; 
       }
     }
