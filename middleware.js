@@ -4,15 +4,7 @@ export const config = {
 }
 
 export default function middleware(request) {
-    // Bloquear IP específica 
-    const blockedIPs = ['201.168.150.178'];
-    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
-    if (ip && blockedIPs.includes(ip)) {
-      return new Response('Access denied - Blocked IP', {
-        status: 403,
-        headers: { 'X-Blocked-Reason': 'Blocked IP' }
-      });
-    }
+    // ...existing code... (IP blocking removed)
     // Permitir el bot de Vercel (para previews y miniaturas)
     const userAgent = request.headers.get('user-agent') || '';
     const lowerUA = userAgent.toLowerCase();
