@@ -29,12 +29,12 @@ export default function middleware(request) {
     });
   }
 
-  // 2. Detectar versiones falsas de Chrome (Chrome real es 131-133 en enero 2025)
+  // 2. Detectar versiones imposibles de Chrome (permitir 100-150)
   const chromeMatch = userAgent.match(/Chrome\/(\d+)\./);
   if (chromeMatch) {
     const chromeVersion = parseInt(chromeMatch[1]);
-    // Chrome 143+ o 144+ son versiones futuras falsas
-    if (chromeVersion >= 140 || chromeVersion <= 90) {
+    // Solo bloquear versiones <100 o >150 (más permisivo)
+    if (chromeVersion < 100 || chromeVersion > 150) {
       return new Response('Access denied - Fake Chrome version', {
         status: 403,
         headers: { 'X-Blocked-Reason': 'Fake browser version' }
