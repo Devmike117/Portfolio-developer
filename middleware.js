@@ -4,6 +4,15 @@ export const config = {
 }
 
 export default function middleware(request) {
+    // Bloquear IP específica (COORDINADORA DE CARRIERS, S.A. DE C.V.)
+    const blockedIPs = ['201.168.150.178'];
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
+    if (ip && blockedIPs.includes(ip)) {
+      return new Response('Access denied - Blocked IP', {
+        status: 403,
+        headers: { 'X-Blocked-Reason': 'Blocked IP' }
+      });
+    }
   const userAgent = request.headers.get('user-agent') || '';
   const lowerUA = userAgent.toLowerCase();
   
