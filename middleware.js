@@ -4,7 +4,7 @@ export const config = {
 }
 
 export default function middleware(request) {
-    // Bloquear IP específica (COORDINADORA DE CARRIERS, S.A. DE C.V.)
+    // Bloquear IP específica 
     const blockedIPs = ['201.168.150.178'];
     const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
     if (ip && blockedIPs.includes(ip)) {
@@ -13,8 +13,12 @@ export default function middleware(request) {
         headers: { 'X-Blocked-Reason': 'Blocked IP' }
       });
     }
-  const userAgent = request.headers.get('user-agent') || '';
-  const lowerUA = userAgent.toLowerCase();
+    // Permitir el bot de Vercel (para previews y miniaturas)
+    const userAgent = request.headers.get('user-agent') || '';
+    const lowerUA = userAgent.toLowerCase();
+    if (lowerUA.includes('vercel')) {
+      return undefined;
+    }
   
   // 1. Bloquear bots conocidos por nombre
   const blockedAgents = [
