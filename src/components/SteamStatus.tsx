@@ -6,8 +6,12 @@ export const SteamStatus = () => {
 
   {/* Detectar si es vercel o netlify */}
   const getSteamEndpoint = () => {
-    if (typeof window !== "undefined" && window.location.hostname.includes("vercel.app")) {
-      return "/api/sendSteamStatus"; 
+    if (typeof window !== "undefined") {
+      const hostname = window.location.hostname;
+      // Detectar Vercel por dominio .vercel.app o mi dominio propio
+      if (hostname.includes("vercel.app") || hostname === "devmike117") {
+        return "/api/sendSteamStatus"; 
+      }
     }
     return "/.netlify/functions/sendSteamStatus"; 
   };

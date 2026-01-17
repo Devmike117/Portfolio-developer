@@ -19,8 +19,12 @@ export const ContactButton = () => {
 
   {/* Detectar si es vercel o netlify */}
   const getEmailEndpoint = () => {
-    if (typeof window !== "undefined" && window.location.hostname.includes("vercel.app")) {
-      return "/api/sendEmail"; 
+    if (typeof window !== "undefined") {
+      const hostname = window.location.hostname;
+      // Detectar Vercel por dominio .vercel.app o mi dominio propio
+      if (hostname.includes("vercel.app") || hostname === "devmike117") {
+        return "/api/sendEmail"; 
+      }
     }
     return "/.netlify/functions/sendEmail"; 
   };

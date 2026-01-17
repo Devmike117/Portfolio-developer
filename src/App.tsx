@@ -10,7 +10,7 @@ import {
 	Header,
 	ModalProject,
 	Navigation,
-	ChristmasLights,
+	//ChristmasLights,
 } from './components';
 import type { Project } from './types';
 
