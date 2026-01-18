@@ -1,18 +1,17 @@
-// Middleware de Vercel para bloquear bots y tráfico no deseado
+{/* Configuracion de middleware para bloquear bots y scrapers */}
 export const config = {
   matcher: '/:path*',
 }
 
+{/* Lógica del middleware: (aceptar bot vercel) */}
 export default function middleware(request) {
-    // ...existing code... (IP blocking removed)
-    // Permitir el bot de Vercel (para previews y miniaturas)
     const userAgent = request.headers.get('user-agent') || '';
     const lowerUA = userAgent.toLowerCase();
     if (lowerUA.includes('vercel')) {
       return undefined;
     }
   
-  // 1. Bloquear bots conocidos por nombre
+  {/* Reglas para bloquear bots y scrapers */}
   const blockedAgents = [
     'bot', 'crawler', 'spider', 'scrape', 'scraper',
     'curl', 'wget', 'python-requests', 'http.client',
@@ -26,7 +25,7 @@ export default function middleware(request) {
     'yandexbot', 'baiduspider', 'seznambot', 'ahrefsbot',
     'semrushbot', 'dataforseo', 'serpstatbot', 'linkdex'
   ];
-
+  {/* Bloquear User-Agents conocidos de bots */}
   if (blockedAgents.some(bot => lowerUA.includes(bot))) {
     return new Response('Access denied - Bot detected', {
       status: 403,
@@ -34,11 +33,11 @@ export default function middleware(request) {
     });
   }
 
-  // 2. Detectar versiones imposibles de Chrome (permitir 100-150)
+  {/* Bloquear bots que ni al caso: no navegadores reales o versiones raras */}
   const chromeMatch = userAgent.match(/Chrome\/(\d+)\./);
   if (chromeMatch) {
     const chromeVersion = parseInt(chromeMatch[1]);
-    // Solo bloquear versiones <100 o >150 (más permisivo)
+    {/* Detectar versiones de Chrome fuera del rango 100-150 */}
     if (chromeVersion < 100 || chromeVersion > 150) {
       return new Response('Access denied - Fake Chrome version', {
         status: 403,
@@ -47,7 +46,7 @@ export default function middleware(request) {
     }
   }
 
-  // 3. Detectar Edge con versiones raras (Edge/18.19582)
+  {/* Bloquear versiones de edge no reconocidas */}
   if (userAgent.includes('Edge/18.') || userAgent.includes('Edge/17.')) {
     return new Response('Access denied - Old Edge version', {
       status: 403,
@@ -55,7 +54,7 @@ export default function middleware(request) {
     });
   }
 
-  // 4. Bloquear User-Agents demasiado cortos o sin Mozilla
+  {/* Bloquear User-Agents demasiado cortos o sin patrones comunes */}
   if (userAgent.length < 20 || (!lowerUA.includes('mozilla') && !lowerUA.includes('compatible'))) {
     return new Response('Access denied - Invalid UA', {
       status: 403,
@@ -63,7 +62,7 @@ export default function middleware(request) {
     });
   }
 
-  // 5. Detectar patrones sospechosos: Android sin Chrome Mobile
+  {/* Reglas específicas para dispositivos móviles */}
   if (lowerUA.includes('android') && !lowerUA.includes('mobile')) {
     return new Response('Access denied - Suspicious Android', {
       status: 403,
@@ -71,7 +70,7 @@ export default function middleware(request) {
     });
   }
 
-  // 6. Bloquear si tiene Build/ pero no es móvil legítimo
+  {/* Bloquear iOS con cadenas de build sospechosas */}
   if (userAgent.includes('Build/') && !lowerUA.includes('mobile safari')) {
     return new Response('Access denied - Fake mobile', {
       status: 403,
@@ -79,6 +78,6 @@ export default function middleware(request) {
     });
   }
 
-  // Permitir tráfico legítimo
+  {/*Permitir trafico a este punto si pasa todas las reglas */}
   return undefined;
 }
