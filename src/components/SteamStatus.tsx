@@ -90,11 +90,26 @@ export const SteamStatus = () => {
             </p>
           )}
 
+          {/* Estado de Conexión */}
+          {player.personastate !== 0 && !player.gameextrainfo && (
+            <p
+              className={`text-sm 
+                ${player.personastate === 1 ? "text-green-600 dark:text-green-400" : ""}
+                ${player.personastate === 2 ? "text-red-600 dark:text-red-400" : ""}
+                ${player.personastate === 3 ? "text-yellow-600 dark:text-yellow-400" : ""}
+                ${player.personastate === 4 ? "text-gray-500 dark:text-gray-400" : ""}
+                ${![1,2,3,4].includes(player.personastate) ? "text-gray-400 dark:text-gray-500" : ""}
+              `}
+            >
+              Estado: {player.personastate === 1 ? "En línea" : player.personastate === 2 ? "Ocupado" : player.personastate === 3 ? "Ausente" : player.personastate === 4 ? "Durmiendo" : ""}
+            </p>
+          )}
+          
           {/* Estado de juego */}
           {player.gameextrainfo && player.gameid ? (
             <div>
               <p className="text-blue-700 dark:text-blue-400 text-sm">
-                Playing {player.gameextrainfo}
+                Jugando: {player.gameextrainfo}
               </p>
               <img
                 src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/header.jpg`}
@@ -103,7 +118,7 @@ export const SteamStatus = () => {
               />
             </div>
           ) : (
-            <p className="text-gray-500 dark:text-gray-400 text-xs italic">Not playing right now</p>
+            <p className="text-gray-500 dark:text-gray-400 text-xs italic">No está jugando en este momento</p>
           )}
         </div>
       )}
