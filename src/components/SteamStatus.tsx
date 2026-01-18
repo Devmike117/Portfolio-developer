@@ -103,21 +103,6 @@ export const SteamStatus = () => {
               })}
             </p>
           )}
-
-          {/* Estado de Conexión */}
-          {player.personastate !== 0 && (
-            <p
-              className={`text-sm 
-                ${player.personastate === 1 ? "text-green-600 dark:text-green-400" : ""}
-                ${player.personastate === 2 ? "text-red-600 dark:text-red-400" : ""}
-                ${player.personastate === 3 ? "text-yellow-600 dark:text-yellow-400" : ""}
-                ${player.personastate === 4 ? "text-gray-500 dark:text-gray-400" : ""}
-                ${![1,2,3,4].includes(player.personastate) ? "text-gray-400 dark:text-gray-500" : ""}
-              `}
-            >
-              Estado: {player.personastate === 1 ? "En línea" : player.personastate === 2 ? "Ocupado" : player.personastate === 3 ? "Ausente" : player.personastate === 4 ? "Durmiendo" : ""}
-            </p>
-          )}
           
           {/* Estado de juego */}
           {player.gameextrainfo && player.gameid ? (
@@ -125,9 +110,9 @@ export const SteamStatus = () => {
               <p className="text-blue-700 dark:text-blue-400 text-sm">
                 Jugando: {player.gameextrainfo}
               </p>
-              {player.gamestatus && (
+              {(player.gamestatus || player.rich_presence) && (
                 <p className="text-blue-500 dark:text-blue-300 text-xs mt-1">
-                  {player.gamestatus}
+                  {player.gamestatus || player.rich_presence}
                 </p>
               )}
               <img
