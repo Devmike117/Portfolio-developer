@@ -73,11 +73,25 @@ export const SteamStatus = () => {
             </div>
             <div>
               <p className="font-semibold text-base text-gray-900 dark:text-white">{player.personaname}</p>
-              {!player.gameextrainfo && (
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  {player.personastate === 0 ? "Offline" : "Online"}
-                </p>
-              )}
+              <p
+                className={`text-sm 
+                  ${player.personastate === 0 ? "text-gray-500 dark:text-gray-400" : ""}
+                  ${player.personastate === 1 ? "text-green-600 dark:text-green-400" : ""}
+                  ${player.personastate === 2 ? "text-red-600 dark:text-red-400" : ""}
+                  ${player.personastate === 3 ? "text-yellow-600 dark:text-yellow-400" : ""}
+                  ${player.personastate === 4 ? "text-gray-500 dark:text-gray-400" : ""}
+                  ${![0,1,2,3,4].includes(player.personastate) ? "text-gray-400 dark:text-gray-500" : ""}
+                `}
+              >
+                Estado: {
+                  player.personastate === 0 ? "Desconectado" :
+                  player.personastate === 1 ? "En línea" :
+                  player.personastate === 2 ? "Ocupado" :
+                  player.personastate === 3 ? "Ausente" :
+                  player.personastate === 4 ? "Durmiendo" :
+                  ""
+                }
+              </p>
             </div>
           </div>
 
@@ -111,6 +125,11 @@ export const SteamStatus = () => {
               <p className="text-blue-700 dark:text-blue-400 text-sm">
                 Jugando: {player.gameextrainfo}
               </p>
+              {player.gamestatus && (
+                <p className="text-blue-500 dark:text-blue-300 text-xs mt-1">
+                  {player.gamestatus}
+                </p>
+              )}
               <img
                 src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/header.jpg`}
                 alt={player.gameextrainfo}
