@@ -91,7 +91,7 @@ export const SteamStatus = () => {
           )}
 
           {/* Estado de Conexión */}
-          {player.personastate !== 0 && !player.gameextrainfo && (
+          {player.personastate !== 0 && (
             <p
               className={`text-sm 
                 ${player.personastate === 1 ? "text-green-600 dark:text-green-400" : ""}
