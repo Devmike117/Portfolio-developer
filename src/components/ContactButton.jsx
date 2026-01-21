@@ -17,16 +17,15 @@ export const ContactButton = () => {
 
   const handleCloseModal = () => setIsModalOpen(false);
 
-  // Detectar si es Vercel o dominio propio
+  {/* Determinar endpoint de envío de email según entorno */}
   const getEmailEndpoint = () => {
     if (typeof window !== "undefined") {
       const hostname = window.location.hostname;
-      // Detectar Vercel por dominio .vercel.app o mi dominio propio
+      {/* Determinar dominio de Vercel o mi propio dominio */}
       if (hostname.includes("vercel.app") || hostname.includes("devmike117.com")) {
         return "/api/sendEmail";
       }
     }
-    // Por defecto, usar la ruta de Vercel/api
     return "/api/sendEmail";
   };
 

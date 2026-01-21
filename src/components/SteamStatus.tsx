@@ -4,16 +4,15 @@ export const SteamStatus = () => {
   const [player, setPlayer] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
-  // Detectar si es Vercel o dominio propio
+  {/* Determinar endpoint de Steam según entorno */}
   const getSteamEndpoint = () => {
     if (typeof window !== "undefined") {
       const hostname = window.location.hostname;
-      // Detectar Vercel por dominio .vercel.app o mi dominio propio
+      {/* Detectar dominio de Vercel o mi dominio propio */}
       if (hostname.includes("vercel.app") || hostname.includes("devmike117.com")) {
         return "/api/sendSteamStatus";
       }
     }
-    // Por defecto, usar la ruta de Vercel/api
     return "/api/sendSteamStatus";
   };
 
