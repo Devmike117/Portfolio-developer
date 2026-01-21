@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     }
   }
 
-  // Validar origen de la petición
+  {/* Validar dominio de origen */}
   const allowedDomains = [
     "www.devmike117.com",
     "devmike117.com",
@@ -30,12 +30,7 @@ export default async function handler(req, res) {
     return res.status(403).json({ success: false, error: "Forbidden: Invalid origin" });
   }
 
-  {/* Autenticación mediante token en cabecera */}
-  const AUTH_TOKEN = process.env.SEND_EMAIL_AUTH_TOKEN;
-  const clientToken = req.headers["authorization"]?.replace("Bearer ", "");
-  if (!AUTH_TOKEN || clientToken !== AUTH_TOKEN) {
-    return res.status(401).json({ success: false, error: "Unauthorized" });
-  }
+  // ...existing code...
   try {
     const data = req.body;
 
