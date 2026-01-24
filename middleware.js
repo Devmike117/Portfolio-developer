@@ -1,3 +1,23 @@
+
+// Bloqueo de rango de IPs maliciosas (ejemplo: 185.177.72.0/24)
+function isBlockedIP(ip) {
+  // Solo IPv4, rango 185.177.72.0 - 185.177.72.255
+  if (typeof ip !== 'string') return false;
+  return ip.startsWith('185.177.72.');
+}
+
+export function middleware(request) {
+  const ip =
+    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+    request.ip ||
+    request.connection?.remoteAddress ||
+    '';
+
+  if (isBlockedIP(ip)) {
+    return new Response('Forbidden', { status: 403 });
+  }
+  // ...existing code...
+}
 {/* Configuracion de middleware para bloquear bots y scrapers */}
 export const config = {
   matcher: '/:path*',
