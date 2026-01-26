@@ -7,7 +7,10 @@ export const config = {
 export default function middleware(request) {
     const userAgent = request.headers.get('user-agent') || '';
     const lowerUA = userAgent.toLowerCase();
-    if (lowerUA.includes('vercel')) {
+    const allowedSocialBots = [
+      'vercel', 'whatsapp', 'facebookexternalhit', 'twitterbot', 'linkedinbot', 'slackbot', 'discordbot', 'telegrambot', 'pinterest', 'skypeuripreview', 'applebot'
+    ];
+    if (allowedSocialBots.some(bot => lowerUA.includes(bot))) {
       return undefined;
     }
   
