@@ -474,15 +474,6 @@ export const skills = [
 	},
 	{
 		id: 10,
-		imageSrc: '/rust.png',
-		technologyName: 'Rust',
-		level: 'Básico',
-		context: 'Systems',
-		bgColor: '#FFF3E0',
-		borderColor: '#FFCC80',
-	},
-	{
-		id: 11,
 		imageSrc: '/flutter.png',
 		technologyName: 'Flutter',
 		level: 'Intermedio',
@@ -491,16 +482,7 @@ export const skills = [
 		borderColor: '#90CAF9',
 	},
 	{
-		id: 12,
-		imageSrc: '/vuejs.png',
-		technologyName: 'Vue.js',
-		level: 'Intermedio',
-		context: 'Frontend',
-		bgColor: '#E8F5E8',
-		borderColor: '#A5D6A7',
-	},
-	{
-		id: 13,
+		id: 11,
 		imageSrc: '/graphql.png',
 		technologyName: 'GraphQL',
 		level: 'Intermedio',
@@ -509,7 +491,7 @@ export const skills = [
 		borderColor: '#F8BBD9',
 	},
 	{
-		id: 14,
+		id: 12,
 		imageSrc: '/docker.png',
 		technologyName: 'Docker',
 		level: 'Intermedio',
@@ -518,7 +500,7 @@ export const skills = [
 		borderColor: '#90CAF9',
 	},
 	{
-		id: 15,
+		id: 13,
 		imageSrc: '/aws.png',
 		technologyName: 'AWS',
 		level: 'Intermedio',
@@ -527,7 +509,7 @@ export const skills = [
 		borderColor: '#FFCC02',
 	},
 	{
-		id: 16,
+		id: 14,
 		imageSrc: '/firebase.png',
 		technologyName: 'Firebase',
 		level: 'Básico',
@@ -536,7 +518,7 @@ export const skills = [
 		borderColor: '#FFD54F',
 	},
 	{
-		id: 17,
+		id: 15,
 		imageSrc: '/googlecloud.png',
 		technologyName: 'Google Cloud',
 		level: 'Básico',
@@ -545,7 +527,7 @@ export const skills = [
 		borderColor: '#90CAF9',
 	},
 	{
-		id: 18,
+		id: 16,
 		imageSrc: '/mongodb.png',
 		technologyName: 'MongoDB',
 		level: 'Intermedio',
@@ -554,7 +536,7 @@ export const skills = [
 		borderColor: '#A5D6A7',
 	},
 	{
-		id: 19,
+		id: 17,
 		imageSrc: '/postgresql.png',
 		technologyName: 'PostgreSQL',
 		level: 'Intermedio',
@@ -563,7 +545,7 @@ export const skills = [
 		borderColor: '#90CAF9',
 	},
 	{
-		id: 20,
+		id: 18,
 		imageSrc: '/unity.webp',
 		technologyName: 'Unity',
 		level: 'Intermedio',
@@ -572,16 +554,7 @@ export const skills = [
 		borderColor: '#E0E0E0',
 	},
 	{
-		id: 21,
-		imageSrc: '/csharp.png',
-		technologyName: 'C#',
-		level: 'Básico',
-		context: 'Language',
-		bgColor: '#E8F5E8',
-		borderColor: '#A5D6A7',
-	},
-	{
-		id: 22,
+		id: 19,
 		imageSrc: '/storybook.png',
 		technologyName: 'Storybook',
 		level: 'Básico',
@@ -590,7 +563,7 @@ export const skills = [
 		borderColor: '#F8BBD9',
 	},
 	{
-		id: 23,
+		id: 20,
 		imageSrc: '/fastapi.png',
 		technologyName: 'FastAPI',
 		level: 'Intermedio',
@@ -599,7 +572,7 @@ export const skills = [
 		borderColor: '#80CBC4',
 	},
 	{
-		id: 24,
+		id: 21,
 		imageSrc: '/elasticsearch.png',
 		technologyName: 'Elasticsearch',
 		level: 'Básico',
@@ -608,7 +581,7 @@ export const skills = [
 		borderColor: '#80DEEA',
 	},
 	{
-		id: 25,
+		id: 22,
 		imageSrc: '/netlify.png',
 		technologyName: 'Netlify',
 		level: 'Avanzado',
@@ -617,7 +590,7 @@ export const skills = [
 		borderColor: '#81C784',
 	},
 	{
-		id : 26,
+		id : 23,
 		imageSrc: '/git.png',
 		technologyName: 'Git',
 		level: 'Avanzado',
@@ -626,7 +599,7 @@ export const skills = [
 		borderColor: '#E1BEE7',
 	},
 	{
-		id: 27,
+		id: 24,
 		imageSrc: '/githubb.png',
 		technologyName: 'GitHub',
 		level: 'Avanzado',
