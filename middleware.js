@@ -13,17 +13,10 @@ export default function middleware(request) {
   
   // Reglas para bloquear bots y scrapers
   const blockedAgents = [
-    'bot', 'crawler', 'spider', 'scrape', 'scraper',
-    'curl', 'wget', 'python-requests', 'http.client',
-    'axios', 'node-fetch', 'go-http-client', 'java/',
-    'okhttp', 'apache-httpclient', 'selenium', 'puppeteer',
-    'playwright', 'scrapy', 'gptbot', 'chatgpt', 'claudebot',
-    'claude-web', 'anthropic', 'bingbot', 'google-extended',
-    'perplexitybot', 'applebot', 'facebookbot', 
-    'facebookexternalhit', 'semrush', 'ahrefs', 'majestic',
-    'mj12bot', 'dotbot', 'petalbot', 'bytespider',
-    'yandexbot', 'baiduspider', 'seznambot', 'ahrefsbot',
-    'semrushbot', 'dataforseo', 'serpstatbot', 'linkdex'
+    'scrape', 'scraper', 'curl', 'wget', 'python-requests', 'http.client',
+    'axios', 'node-fetch', 'go-http-client', 'java/', 'okhttp', 'apache-httpclient',
+    'selenium', 'puppeteer', 'playwright', 'scrapy', 'gptbot', 'chatgpt', 'claudebot',
+    'claude-web', 'anthropic', 'google-extended', 'perplexitybot', 'ccbot', 'omgilibot'
   ];
   // Bloquear User-Agents conocidos de bots
   if (blockedAgents.some(bot => lowerUA.includes(bot))) {
