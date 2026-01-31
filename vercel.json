@@ -18,7 +18,10 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://devmike117.com/$1",
+      "has": [
+        { "type": "host", "value": "devmike117.com" }
+      ],
+      "destination": "https://devmike117.com/:path*",
       "permanent": true
     }
   ],
@@ -29,3 +32,4 @@
     }
   ]
 }
+
