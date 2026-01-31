@@ -3,7 +3,7 @@ import './index.css'
 import App from './App'
 import { injectSpeedInsights } from '@vercel/speed-insights';
 
-// ASCII Art en consola
+// ASCII Art 
 // ===============================
 // Devmike117 ASCII Console Engine 
 // ===============================
@@ -53,7 +53,7 @@ const messageBottom = `               *
 ****************************************
 `;
 
-// Mostrar en consola con estilos
+// Mostrar en consola 
 console.log(
   "%c" + trainStatic +
   "%c" + messageTop +
@@ -64,9 +64,6 @@ console.log(
   "color: #4682B4; font-weight: bold;",          
   `color: ${messageColor}; font-weight: bold;`  
 );
-
-
-
 
 injectSpeedInsights();
 
