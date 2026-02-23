@@ -333,7 +333,7 @@ export const experience = [
 			'• Su arquitectura elimina registros manuales, reduce errores y agiliza decisiones operativas.\n\n' +
 			'• Detecta reincidencias con el algoritmo de reconocimiento facial, actualiza historiales y genera reportes PDF con firma digital y código QR único.\n\n' +
 			'• Dashboard analítico para visualizar estadísticas en tiempo real y control de acceso para administradores.\n\n' +
-			'• Operación local bajo estándares de seguridad y privacidad, cumpliendo con normativas nacionales e internacionales en protección de datos personales y biométricos.',
+			'• Operación vía intranet, bajo estándares de seguridad y privacidad, cumpliendo con normativas nacionales e internacionales en protección de datos personales y biométricos.',
 
 		technologiesUsed: [
 			'React',
