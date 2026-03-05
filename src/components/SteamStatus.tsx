@@ -116,7 +116,7 @@ export const SteamStatus = () => {
                 </p>
               )}
               <img
-                src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/header.jpg`}
+                src={`https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${player.gameid}/header.jpg`}
                 alt={player.gameextrainfo}
                 className="rounded-lg mt-2"
                 data-attempt="0"
@@ -124,9 +124,11 @@ export const SteamStatus = () => {
                   const img = e.target as HTMLImageElement;
                   const attempt = parseInt(img.getAttribute("data-attempt") || "0");
                   const fallbacks = [
+                    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${player.gameid}/header.jpg`,
+                    `https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/${player.gameid}/capsule_616x353.jpg`,
+                    `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${player.gameid}/capsule_616x353.jpg`,
+                    `https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/header.jpg`,
                     `https://cdn.akamai.steamstatic.com/steam/apps/${player.gameid}/header.jpg`,
-                    `https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/capsule_616x353.jpg`,
-                    `https://cdn.akamai.steamstatic.com/steam/apps/${player.gameid}/capsule_616x353.jpg`,
                   ];
                   if (attempt < fallbacks.length) {
                     img.setAttribute("data-attempt", String(attempt + 1));
