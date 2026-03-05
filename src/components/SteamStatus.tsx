@@ -119,10 +119,18 @@ export const SteamStatus = () => {
                 src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/header.jpg`}
                 alt={player.gameextrainfo}
                 className="rounded-lg mt-2"
+                data-attempt="0"
                 onError={(e) => {
                   const img = e.target as HTMLImageElement;
-                  if (!img.src.includes("akamai")) {
-                    img.src = `https://cdn.akamai.steamstatic.com/steam/apps/${player.gameid}/header.jpg`;
+                  const attempt = parseInt(img.getAttribute("data-attempt") || "0");
+                  const fallbacks = [
+                    `https://cdn.akamai.steamstatic.com/steam/apps/${player.gameid}/header.jpg`,
+                    `https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/capsule_616x353.jpg`,
+                    `https://cdn.akamai.steamstatic.com/steam/apps/${player.gameid}/capsule_616x353.jpg`,
+                  ];
+                  if (attempt < fallbacks.length) {
+                    img.setAttribute("data-attempt", String(attempt + 1));
+                    img.src = fallbacks[attempt];
                   } else {
                     img.style.display = "none";
                   }
