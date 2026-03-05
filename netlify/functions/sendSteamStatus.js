@@ -17,6 +17,21 @@ exports.handler = async function(event, context) {
       };
     }
 
+    const player = data.response.players[0];
+
+    if (player.gameid) {
+      try {
+        const storeRes = await fetch(`https://store.steampowered.com/api/appdetails?appids=${player.gameid}&filters=basic`);
+        const storeData = await storeRes.json();
+        const appData = storeData?.[player.gameid];
+        if (appData?.success && appData?.data?.header_image) {
+          player.header_image = appData.data.header_image;
+        }
+      } catch (_) {
+        // Store API failed, header_image will be absent
+      }
+    }
+
     return {
       statusCode: 200,
       body: JSON.stringify(data)

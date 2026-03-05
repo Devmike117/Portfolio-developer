@@ -8,9 +8,23 @@ export default async function handler(req, res) {
     const response = await fetch(steamURL);
     const data = await response.json();
 
-    
     if (!data?.response?.players || data.response.players.length === 0) {
       return res.status(404).json({ error: "No se encontró el jugador." });
+    }
+
+    const player = data.response.players[0];
+
+    if (player.gameid) {
+      try {
+        const storeRes = await fetch(`https://store.steampowered.com/api/appdetails?appids=${player.gameid}&filters=basic`);
+        const storeData = await storeRes.json();
+        const appData = storeData?.[player.gameid];
+        if (appData?.success && appData?.data?.header_image) {
+          player.header_image = appData.data.header_image;
+        }
+      } catch (_) {
+        // Store API failed, header_image will be absent
+      }
     }
 
     res.status(200).json(data);
