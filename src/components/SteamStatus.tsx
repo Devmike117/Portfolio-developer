@@ -119,6 +119,14 @@ export const SteamStatus = () => {
                 src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${player.gameid}/header.jpg`}
                 alt={player.gameextrainfo}
                 className="rounded-lg mt-2"
+                onError={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  if (!img.src.includes("akamai")) {
+                    img.src = `https://cdn.akamai.steamstatic.com/steam/apps/${player.gameid}/header.jpg`;
+                  } else {
+                    img.style.display = "none";
+                  }
+                }}
               />
             </div>
           ) : (
