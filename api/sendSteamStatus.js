@@ -1,4 +1,16 @@
 export default async function handler(req, res) {
+  const allowedOrigins = [
+    "https://www.devmike117.com",
+    "https://devmike117.com",
+  ];
+
+  const origin = req.headers["origin"] || req.headers["referer"] || "";
+  const isAllowed = allowedOrigins.some((o) => origin.startsWith(o));
+
+  if (!isAllowed) {
+    return res.status(403).json({ error: "Forbidden" });
+  }
+
   const apiKey = process.env.API_KEY;
   const steamID = process.env.STEAM_ID;
 
@@ -27,7 +39,18 @@ export default async function handler(req, res) {
       }
     }
 
-    res.status(200).json(data);
+    const safePlayer = {
+      personaname: player.personaname,
+      personastate: player.personastate,
+      avatar: player.avatarfull,
+      profileurl: player.profileurl,
+      gameextrainfo: player.gameextrainfo,
+      gameid: player.gameid,
+      header_image: player.header_image,
+      lastlogoff: player.lastlogoff,
+    };
+
+    res.status(200).json({ player: safePlayer });
   } catch (error) {
     console.error("Steam fetch error:", error);
     res.status(500).json({ error: "Error al obtener datos de Steam" });

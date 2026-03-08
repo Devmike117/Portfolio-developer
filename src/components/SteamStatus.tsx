@@ -21,8 +21,8 @@ export const SteamStatus = () => {
       const res = await fetch(getSteamEndpoint());
       const data = await res.json();
 
-      if (data?.response?.players?.length > 0) {
-        setPlayer(data.response.players[0]);
+      if (data?.player) {
+        setPlayer(data.player);
         setError(null);
       } else {
         setError("No player data found.");
@@ -63,7 +63,7 @@ export const SteamStatus = () => {
           <div className="flex items-center gap-3">
             <div className="relative">
               <img
-                src={player.avatarfull}
+                src={player.avatar}
                 alt={player.personaname}
                 className="w-14 h-14 rounded-xl shadow"
               />
