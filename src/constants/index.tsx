@@ -8,6 +8,7 @@ import {
 	FaSteam,
 	FaTwitch,
 	FaApple,
+	FaLaptopCode,
 } from 'react-icons/fa';
 import { IoGridOutline } from 'react-icons/io5';
 import type { Project } from '../types';
@@ -15,19 +16,13 @@ import type { Project } from '../types';
 
 export const personalInfo = {
 	name: 'Devmike117',
-	age: 21,
-	location: 'México, Estado de México',
+	age: null,
+	location: 'null',
 	occupation: 'Full-Stack Developer & Traveling Tech Enthusiast',
 	overview:
-		'Estudiante de Ing. en Sistemas Computacionales. Trabajo en desarrollo web, software y temas de ciberseguridad.',
+		'Egresado de Ing. en Sistemas Computacionales. Trabajo en desarrollo web, software y temas de ciberseguridad.',
 	hobbies: [
 		'Hobbies:',
-		'Viajar a distintas partes.',
-		'Tocar instrumentos: Guitarra eléctrica, Bateria y Piano.',
-		'Tener tiempo de calidad con amig@s y familia.',
-		'Prácticar deportes: Skateboarding y BMX.',
-		'Asistir a conciertos de mis bandas favoritas ♡.',
-
 		// Y que viva the neighbourhood jaja ok no, bueno si pero no lo pongo :D
 	],
 	otherLinks: [
@@ -46,48 +41,40 @@ export const personalInfo = {
 	socialLinks: [
 		{
 			id: 1,
-			name: 'Apple',
-			url: 'https://music.apple.com/mx/playlist/mix-en-loop/pl.pm-7cd15d345a6ed1efe015be685ac6090d',
-			icon: <FaApple size={30} />,
-		},
-		{
-			id: 2,
 			name: 'Instagram',
 			url: 'https://www.instagram.com/devmike117/',
 			icon: <FaInstagram size={30} />,
 		},
 		{
-			id: 3,
-			name: 'Pinterest',
-			url: 'https://www.pinterest.com/devmike117/',
-			icon: <FaPinterest size={30} />,
-		},
-		{
-			id: 4,
+			id: 2,
 			name: 'GitHub',
 			url: 'https://github.com/Devmike117',
 			icon: <FaGithub size={30} />,
 		},
 		{
-			id: 5,
+			id: 3,
 			name: 'LinkedIn',
 			url: 'https://www.linkedin.com/in/miguelgabrielhndz/',
 			icon: <FaLinkedin size={30} />,
 		},
 		{
-			id: 6,
+			id: 4,
+			name: 'Devmike tools',
+			url: 'https://tools.devmike117.com/',
+			icon: <FaLaptopCode size={30} />,
+		},
+		{
+			id: 5,
 			name: 'Steam',
 			url: 'https://steamcommunity.com/id/mikedarkness',
 			icon: <FaSteam size={30} />,	
 		},
-
-		// Comentado temporalmente
-		//{
-		//	id: 7,
-		//	name: 'Twitch',
-		//	url: 'https://www.twitch.tv/devmike117',
-		//	icon: <FaTwitch size={30} />,
-		//},
+		{
+			id: 6,
+			name: 'Twitch',
+			url: 'https://www.twitch.tv/devmike117',
+			icon: <FaTwitch size={30} />,
+			},
 	],
 	photoSrc: '/foto.webp',
 };
