@@ -100,6 +100,81 @@ export const tabs = [
 export const projects: Project[] = [
 	{
 		id: 0,
+		name: 'Devmike tools',
+		description:
+			'Es una plataforma web que ofrece una variedad de herramientas gratuitas para desarrolladores y estudiantes. Diseñada para mejorar la productividad y facilitar el trabajo.',
+		technologies: [
+			// Frontend y Frameworks
+			'React',
+			'React DOM',
+			'React Router DOM',
+			'TypeScript',
+			'Vite',
+			// Estilos y UI
+			'Tailwind CSS',
+			'PostCSS',
+			'Autoprefixer',
+			'React Icons',
+			// Animaciones
+			'Framer Motion',
+			// Procesamiento de imágenes y multimedia
+			'@ffmpeg/ffmpeg',
+			'@ffmpeg/util',
+			'jszip',
+			'@imgly/background-removal',
+			'heic2any',
+			'html2canvas',
+			'pdf-lib',
+			'pdfjs-dist',
+			'tesseract.js (OCR)',
+			'cloudconvert',
+			// Mapas y geolocalización
+			'leaflet',
+			'react-leaflet',
+			'@types/leaflet',
+			// Validaciones y utilidades
+			'libphonenumber-js',
+			'APIS propias',
+			'mammoth (Word a HTML)',
+			'qrcode',
+			'qr-code-styling',
+			'dotenv',
+			'form-data',
+			'formidable',
+			'multer',
+			'node-fetch',
+			// Diagramas y visualización
+			'mermaid',
+			// Backend/API
+			'express',
+			'@sparticuz/chromium',
+			'playwright-core',
+			// Autenticación y servicios
+			'firebase',
+			// Herramientas de desarrollo
+			'eslint',
+			'@eslint/js',
+			'eslint-plugin-react-hooks',
+			'Proxy propio',
+			'eslint-plugin-react-refresh',
+			'@types/node',
+			'@types/react',
+			'@types/react-dom',
+			'@types/qrcode',
+			'typescript-eslint',
+
+		],
+		projectUrl: 'https://tools.devmike117.com/',
+		imageSrc: [
+				'/1tool.devmike117.webp',
+				'/2tool.devmike117.webp',
+				'/3tool.devmike117.webp',
+				'/4tool.devmike117.webp',
+				'/5tool.devmike117.webp',
+			],		
+	},
+	{
+		id: 1,
 		name: 'Plataforma web para restaurante',
 		description:
 			'Plataforma web moderna y responsiva con sistema de pedidos en línea, reservas, integración de pagos con Stripe, dashboard administrativo con analytics, generación de recibos PDF automáticos y notificaciones por email.',
@@ -129,25 +204,27 @@ export const projects: Project[] = [
 		imageSrc: 'https://raw.githubusercontent.com/Devmike117/Devmike117/refs/heads/main/assets/Systemrestaurant.webp',
 	},
 	{
-		id: 1,
-		name: 'Medi-IA',
+		id: 2,
+		name: 'Devmike downloader',
 		description:
-			'Herramienta web para consulta farmacológica Detecta detalles de medicamentos capturados desde la cámara y permite búsqueda por voz. Utiliza inteligencia artificial para extraer información relevante en tiempo real, facilitando consultas rápidas y mejorando la accesibilidad en entornos médicos.',
+			'Es una aplicación de escritorio que permite descargar videos y audios de múltiples plataformas populares: YouTube, Facebook (videos públicos), X, TikTok, Instagram (reels, posts), Twitch y SoundCloud.',
 		technologies: [
-			'JavaScript',
-			'HTML5',
-			'CSS3',
-			'OCR.space',
-			'Node.js',
-			'emailjs',
-			'localStorage',
+			'Python',
+			'yt-dlp',
+			'ffmpeg',
+			'Tkinter',
 		],
-		projectUrl: 'https://medi-ia.netlify.app/',
-		githubUrl: 'https://github.com/Devmike117/medi-IA',
-		imageSrc: '/project1.jpg',
+		projectUrl: 'https://tools.devmike117.com/appdownload',
+		githubUrl: 'https://github.com/Devmike117/devmike-downloader',
+		imageSrc: [
+			'/devmike_banner_v3.svg',
+			'/devmikedownloader.webp',
+
+		],
+		notes: '• Si necesitas instalar ffmpeg, la app te mostrará un botón para descargarlo.\n\n• El ejecutable está firmado digitalmente, pero con un certificado autofirmado.\n\n• La aplicación es completamente gratuita y de código abierto.',
 	},
 	{
-		id: 2,
+		id: 3,
 		name: 'Devmike117 Store',
 		description:
 			'Devmike117 Store es una plataforma web que combina tienda de productos digitales (licencias de juegos, software, consoles) con servicios técnicos profesionales (desarrollo web, reparación de equipos, recuperación de datos).',
@@ -181,7 +258,7 @@ export const projects: Project[] = [
 		imageSrc: '/Project02.png',
 	},
 	{
-		id: 3,
+		id: 4,
 		name: 'Quitafondo',
 		description:
 			'Aplicación de escritorio que elimina fondos de imágenes automáticamente y sin conexión, usando redes neuronales. Ofrece edición manual, compatibilidad con múltiples formatos y preserva la calidad sin subir archivos a terceros.',
@@ -197,7 +274,7 @@ export const projects: Project[] = [
 		imageSrc: '/project2.jpg',
 	},
 	{
-		id: 4,
+		id: 5,
 		name: 'Verificador de correos electrónicos',
 		description:
 			'Herramienta de escritorio en Python que audita direcciones de correo en tiempo real. Evalúa sintaxis, servidores, autenticación y posibles intentos de phishing, todo de forma local y sin comprometer la privacidad del usuario.',
@@ -215,7 +292,7 @@ export const projects: Project[] = [
 		imageSrc: '/project3.jpg',
 	},
 	{
-		id: 5,
+		id: 6,
 		name: 'Sistema de Cifrado Web para PDFs',
 		description:
 			'Sistema que permite cifrar archivos PDF utilizando algoritmos como ECC, RSA, AES y ChaCha20. Ideal para proteger documentos sensibles en contextos educativos, profesionales o personales.',
@@ -235,7 +312,7 @@ export const projects: Project[] = [
 		imageSrc: '/project4.png',
 	},
 	{
-		id: 6,
+		id: 7,
 		name: 'Modelo de Detección de Rostros',
 		description:
 			'Identifica rostros humanos en tiempo real y en imágenes estáticas usando algoritmos Haar Cascade y redes neuronales. Funciona localmente y es útil para pruebas biométricas básicas y sistemas de autenticación.',
@@ -254,7 +331,7 @@ export const projects: Project[] = [
 		imageSrc: '/project5.png',
 	},
 	{
-		id: 7,
+		id: 8,
 		name: 'Generador de Códigos QR',
 		description:
 			'Herramienta que permite crear códigos QR personalizados en segundos, a partir de texto, enlaces o datos de contacto. Funciona sin conexión a internet y es ideal para compartir información de forma rápida y moderna.',

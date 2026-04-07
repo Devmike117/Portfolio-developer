@@ -83,15 +83,15 @@ export const Header = () => {
         {/* Stats */}
         <div className="flex gap-10 items-center mt-2">
           <div className="flex flex-col items-center">
-            <span className="font-bold text-xl sm:text-2xl dark:text-white">15</span>
+            <span className="font-bold text-xl sm:text-2xl dark:text-white">16</span>
             <span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Proyectos</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-bold text-xl sm:text-2xl dark:text-white">4+</span>
+            <span className="font-bold text-xl sm:text-2xl dark:text-white">3+</span>
             <span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Años Exp.</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="font-bold text-xl sm:text-2xl dark:text-white">30+</span>
+            <span className="font-bold text-xl sm:text-2xl dark:text-white">15+</span>
             <span className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">Tecnologías</span>
           </div>
         </div>
