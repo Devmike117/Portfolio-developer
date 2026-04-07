@@ -3,7 +3,6 @@ import { Moon, Sun } from 'lucide-react';
 {/* Librería nieve: comentar cuando no sea epoca navideña :) */}
 //import Snowfall from 'react-snowfall'; 
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import {
 	GridExperience,
 	GridProjects,
@@ -110,7 +109,6 @@ function App() {
 			</footer>
 		</div>
 		<Analytics />
-		<SpeedInsights />
 		</>
 	);
 }

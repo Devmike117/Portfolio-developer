@@ -1,7 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App'
-import { injectSpeedInsights } from '@vercel/speed-insights';
 
 // ASCII Art 
 // ===============================
@@ -64,8 +63,6 @@ console.log(
   "color: #4682B4; font-weight: bold;",          
   `color: ${messageColor}; font-weight: bold;`  
 );
-
-injectSpeedInsights();
 
 createRoot(document.getElementById('root')!).render(
   <App />
