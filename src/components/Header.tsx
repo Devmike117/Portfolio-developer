@@ -155,9 +155,9 @@ export const Header = () => {
         </div>
 
         {/* Historias */}
-        <div className="mt-4">
+        {/*<div className="mt-4">
           <Stories />
-        </div>
+        </div>*/}
 
         {/* Estado de Steam */}
         <div className="mt-4 flex flex-col sm:flex-row sm:items-start sm:gap-4">
