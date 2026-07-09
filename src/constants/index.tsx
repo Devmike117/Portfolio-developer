@@ -8,10 +8,20 @@ import {
 	FaSteam,
 	FaTwitch,
 	FaApple,
+	FaHandshake,
 	FaLaptopCode,
+	FaCode,
+	FaShieldAlt,
+	FaServer,
+	FaMobileAlt,
+	FaPaintBrush,
+	FaCloud,
 } from 'react-icons/fa';
+import { HiServerStack, HiComputerDesktop, HiExclamationTriangle, HiCheckCircle, HiBolt, HiShieldCheck, HiClock, HiCodeBracketSquare } from 'react-icons/hi2';
 import { IoGridOutline } from 'react-icons/io5';
+import { MdOutlineCloudDone } from 'react-icons/md';
 import type { Project } from '../types';
+import type { Service } from '../types';
 
 
 export const personalInfo = {
@@ -94,6 +104,11 @@ export const tabs = [
 		id: 3,
 		name: 'Habilidades',
 		icon: FaRegUser,
+	},
+	{
+		id: 4,
+		name: 'servicios',
+		icon: FaHandshake,
 	},
 ];
 
@@ -671,4 +686,213 @@ export const skills = [
 		bgColor: '#E8E8E8',
 		borderColor: '#B0B0B0',
 	}
+];
+
+export const services: Service[] = [
+	{
+		id: 1,
+		name: 'Actualización macOS',
+		icon: FaApple,
+		price: 'Desde $599 MXN',
+		description:
+			'Actualiza tu Mac sin soporte oficial de Apple a versiones más recientes de macOS. Extendemos la vida útil de tu equipo con métodos especializados.',
+		features: [
+			{ title: 'Evaluación de compatibilidad', description: 'Verificamos si tu Mac puede ejecutar la versión deseada' },
+			{ title: 'Respaldo de datos', description: 'Verificamos que tengas respaldo antes de proceder' },
+			{ title: 'Instalación de macOS', description: 'Instalamos la versión más reciente compatible con tu Mac' },
+			{ title: 'Verificación de hardware', description: 'Comprobamos que WiFi, Bluetooth, gráficos y audio funcionen' },
+		],
+		process: [
+			{ title: 'Evaluación inicial', description: 'Verificamos modelo, especificaciones y compatibilidad de tu Mac' },
+			{ title: 'Respaldo de datos', description: 'Confirmamos que tengas respaldo o te ayudamos a crearlo' },
+			{ title: 'Instalación', description: 'Proceso de instalación de la nueva versión de macOS (2-4 horas)' },
+			{ title: 'Verificación y entrega', description: 'Probamos que todo funcione y te explicamos los cambios' },
+		],
+		warnings: [
+			'Respaldo obligatorio: debes tener una copia de seguridad completa (Time Machine recomendado)',
+			'No es oficial: esta actualización no está soportada por Apple y se hace bajo tu responsabilidad',
+			'Apple no brindará soporte para Macs con sistema no oficial',
+		],
+		estimatedTime: '3 a 5 horas aproximadamente',
+	},
+	{
+	id: 2,
+	name: 'Desarrollo Web',
+	icon: HiCodeBracketSquare,
+	price: 'Desde $7,999 MXN',
+	description:
+		'Tu negocio en línea, en días, no meses. Sitios rápidos, modernos y diseñados para convertir visitantes en clientes.',
+	features: [
+		{ title: '100% Responsivo', description: 'Perfecto en cualquier pantalla' },
+		{ title: 'Súper rápido', description: 'Tecnología JAMstack, no hosting lento' },
+		{ title: 'Dominio incluido', description: '.com o .mx por 1 año' },
+		{ title: 'SSL & SEO', description: 'Seguro y listo para Google' },
+	],
+	plans: [
+		{
+			name: 'Básico',
+			price: '$7,999 MXN',
+			tagline: 'Para arrancar',
+			items: [
+				'5 secciones',
+				'Formulario de contacto',
+				'Dominio incluido 1 año',
+			],
+		},
+		{
+			name: 'Profesional',
+			price: '$14,999 MXN',
+			tagline: 'Más popular',
+			recommended: true,
+			items: [
+				'10 secciones',
+				'Galería profesional',
+				'SEO avanzado + Analytics',
+			],
+		},
+		{
+			name: 'E-commerce',
+			price: '$39,999 MXN',
+			tagline: 'Vende en línea',
+			items: [
+				'Tienda completa',
+				'50 productos',
+				'Pagos + panel admin',
+			],
+		},
+	],
+	estimatedTime: '1 a 5 semanas según el plan',
+	},
+	{
+		id: 3,
+		name: 'Ciberseguridad',
+		icon: FaShieldAlt,
+		price: 'Cotización según alcance',
+		description: 'Auditorías, cifrado de documentos y hardening de sistemas.',
+	},
+	{
+	id: 4,
+	name: 'Mantenimiento PC',
+	icon: HiComputerDesktop,
+	price: 'Desde $299 MXN',
+	description:
+		'Mantén tu computadora funcionando como nueva. Limpieza física y digital, optimización del sistema y actualizaciones para un rendimiento óptimo.',
+	features: [
+		{ title: 'Limpieza física completa', description: 'Eliminación de polvo del ventilador, disipador y componentes internos' },
+		{ title: 'Cambio de pasta térmica', description: 'Aplicación de pasta térmica nueva para mejor disipación de calor' },
+		{ title: 'Optimización del sistema', description: 'Eliminación de archivos temporales y programas innecesarios' },
+		{ title: 'Escaneo de malware', description: 'Detección de virus y programas maliciosos básicos' },
+		{ title: 'Verificación de actualizaciones', description: 'Revisión de actualizaciones pendientes del sistema' },
+		{ title: 'Prueba de hardware', description: 'Verificación del estado general de componentes' },
+	],
+	whenToUse: [
+		'La computadora está muy lenta',
+		'Se sobrecalienta o hace ruidos extraños',
+		'Tarda mucho en encender',
+		'Se traba o congela frecuentemente',
+		'Los programas tardan en abrir',
+	],
+	benefits: [
+		{ title: 'Mayor velocidad', description: 'Tu PC funcionará más rápido y eficiente', icon: HiBolt },
+		{ title: 'Más seguridad', description: 'Protección contra virus y malware', icon: HiShieldCheck },
+		{ title: 'Mayor vida útil', description: 'Extiende la duración de tu equipo', icon: HiClock },
+	],
+	estimatedTime: 'Aproximadamente 1 a 2 horas, dependiendo del estado del equipo',
+	},
+{
+	id: 5,
+	name: 'Instalación de SO',
+	icon: HiServerStack,
+	price: 'Desde $349 MXN',
+	description:
+		'Tu PC como nueva en horas. Windows o Linux, con drivers, actualizaciones y programas esenciales listos para usar.',
+	features: [
+		{ title: 'Instalación limpia', description: 'Sistema desde cero, sin basura' },
+		{ title: 'Drivers al día', description: 'Todo funcionando de inmediato' },
+		{ title: 'Listo para usar', description: 'Navegador, antivirus y esenciales' },
+	],
+	plans: [
+		{
+			name: 'Windows',
+			price: '$349 - $499 MXN',
+			tagline: 'Win 11, 10, 8.1 o 7',
+			items: [
+				'Drivers y activación',
+				'Actualizaciones completas',
+				'Configuración inicial',
+			],
+		},
+		{
+			name: 'Linux',
+			price: '$399 MXN',
+			tagline: 'Ubuntu, Mint, Fedora y más',
+			items: [
+				'Instalación + drivers',
+				'Capacitación básica',
+				'Ideal para desarrollo',
+			],
+		},
+		{
+			name: 'Dual Boot',
+			price: '$699 MXN',
+			tagline: 'Windows + Linux, elige al iniciar',
+			recommended: true,
+			items: [
+				'Particionado seguro',
+				'Ambos sistemas configurados',
+				'Trabajo y desarrollo en un equipo',
+			],
+		},
+	],
+	warnings: [
+		'La instalación formatea el disco y elimina todos los archivos — te ayudamos a respaldar antes',
+	],
+	estimatedTime: '2 a 4 horas aproximadamente',
+},
+{
+	id: 6,
+	name: 'Recuperación de Datos',
+	icon: MdOutlineCloudDone,
+	price: 'Diagnóstico gratis',
+	description:
+		'¿Borraste o perdiste archivos importantes? Los recuperamos de discos, USB y SD. Solo cobramos si lo logramos.',
+	features: [
+		{ title: 'Diagnóstico gratuito', description: 'Sin costo, sin compromiso' },
+		{ title: 'Cualquier dispositivo', description: 'HDD, SSD, USB, SD y más' },
+		{ title: 'Solo pagas si recuperamos', description: '100% confidencial' },
+	],
+	plans: [
+		{
+			name: 'Básica',
+			price: '$799 MXN',
+			tagline: 'USB, SD, archivos recientes',
+			items: [
+				'Archivos eliminados',
+				'Formateo simple',
+			],
+		},
+		{
+			name: 'Intermedia',
+			price: '$1,499 MXN',
+			tagline: 'Discos con fallos lógicos',
+			items: [
+				'HDD / SSD',
+				'Particiones dañadas',
+			],
+		},
+		{
+			name: 'Avanzada',
+			price: 'Desde $2,499 MXN',
+			tagline: 'Daño físico o casos complejos',
+			items: [
+				'Disco no reconocido',
+				'Requiere sala limpia',
+			],
+		},
+	],
+	warnings: [
+		'Deja de usar el dispositivo de inmediato — seguir usándolo reduce las posibilidades de recuperar tus datos',
+	],
+	estimatedTime: 'Diagnóstico en 24-48 hrs, recuperación según complejidad',
+	},
 ];

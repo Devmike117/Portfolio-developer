@@ -7,3 +7,5 @@ export * from './GridSkills';
 export * from './SongPlayer';
 export * from './ChristmasLights';
 export * from './Stories';
+export { GridServices } from './GridServices';
+export { ModalService } from './ModalService';

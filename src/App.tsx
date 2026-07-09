@@ -6,18 +6,22 @@ import { Analytics } from '@vercel/analytics/react';
 import {
 	GridExperience,
 	GridProjects,
+	GridServices,
 	GridSkills,
 	Header,
 	ModalProject,
 	Navigation,
+	ModalService,
 	//ChristmasLights,
 } from './components';
-import type { Project } from './types';
+import type { Project, Service } from './types';
 
 function App() {
 	const [tabActiveIndex, setTabActiveIndex] = useState<number>(1);
 	const [selectedProject, setSelectedProject] =
 		useState<Project | null>(null);
+	const [selectedService, setSelectedService] =
+		useState<Service | null>(null);
 
 	{/* Iniciar el modo oscuro desde localStorage */}
 	const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -82,26 +86,37 @@ function App() {
 				</div>
 
 				<Header />
-				<Navigation
-					tabActiveIndex={tabActiveIndex}
-					setTabActiveIndex={setTabActiveIndex}
-				/>
-
-				{tabActiveIndex === 1 && (
-					<GridProjects setSelectedProject={setSelectedProject} />
-				)}
-
-				{tabActiveIndex === 2 && <GridExperience />}
-
-				{tabActiveIndex === 3 && <GridSkills />}
-
-				{selectedProject && (
-					<ModalProject
-						selectedProject={selectedProject}
-						setSelectedProject={setSelectedProject}
+					<Navigation
+						tabActiveIndex={tabActiveIndex}
+						setTabActiveIndex={setTabActiveIndex}
 					/>
-				)}
-			</main>
+
+					{tabActiveIndex === 1 && (
+						<GridProjects setSelectedProject={setSelectedProject} />
+					)}
+
+					{tabActiveIndex === 2 && <GridExperience />}
+
+					{tabActiveIndex === 3 && <GridSkills />}
+
+					{tabActiveIndex === 4 && (
+						<GridServices setSelectedService={setSelectedService} />
+					)}
+
+					{selectedProject && (
+						<ModalProject
+							selectedProject={selectedProject}
+							setSelectedProject={setSelectedProject}
+						/>
+					)}
+
+					{selectedService && (
+						<ModalService
+							selectedService={selectedService}
+							setSelectedService={setSelectedService}
+						/>
+					)}
+				</main>
 			{/* Footer */}
 			<footer className="w-full py-4 text-center relative z-10 backdrop-blur-lg bg-white/30 dark:bg-slate-800/30 border-t border-white/20 dark:border-slate-700/20 shadow-lg text-slate-900 dark:text-slate-100 transition-colors duration-300">
 				© Devmike117.{' '}
