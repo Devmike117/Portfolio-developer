@@ -1,67 +1,52 @@
-# Profile de devmike117
+# devmike117 — Portfolio
 
+Portafolio personal con perfil, proyectos, timeline de experiencia, skills e integración en tiempo real con Steam.
 
-<!-- ![Vista previa del Portafolio] -->
-
-![Vista previa del Portafolio](https://raw.githubusercontent.com/Devmike117/Devmike117/refs/heads/main/assets/macbook%20pro%2016.png)
+![Vista previa](https://raw.githubusercontent.com/Devmike117/Devmike117/refs/heads/main/assets/macbook%20pro%2016.png)
 
 <table align="center">
   <tr>
     <td align="center">
       <img src="https://raw.githubusercontent.com/Devmike117/Devmike117/refs/heads/main/assets/phone.png" width="200" alt="Vista móvil" />
-      <br /><strong>Vista móvil</strong>
+      <br /><strong>Móvil</strong>
     </td>
     <td align="center">
       <img src="https://raw.githubusercontent.com/Devmike117/Devmike117/refs/heads/main/assets/ipad.png" width="350" alt="Vista tablet" />
-      <br /><strong>Vista tablet</strong>
+      <br /><strong>Tablet</strong>
     </td>
   </tr>
 </table>
 
+## Stack
 
-## 🧠 Inspiración
+**Frontend**
+- React 19.2.0 + TypeScript 5.6.2
+- Vite 7.1.8
+- Tailwind CSS 4.1.14
+- Lucide React
 
+**Backend / APIs**
+- Netlify Functions (serverless)
+- Steam Web API (estado en línea / juego actual)
+- Node.js runtime
 
-El diseño del portafolio toma inspiración de:
-- La estética dinámica y limpia de redes sociales como Instagram.
-- El equilibrio entre diseño moderno y funcionalidad, creando una experiencia visual atractiva y profesional.
-- La conexión entre vida digital y profesional, mostrando no solo lo que haces, sino también quién eres.
+**Tooling**
+- ESLint
+- Bun
+- Git
 
-## 📌 Funcionalidades Principales
+## Features
 
-- 🧑‍💼 Perfil con información de contacto y enlaces a redes sociales
-- 🖼️ Cuadrícula de proyectos con vistas detalladas en modales interactivos
-- 🕒 Línea de tiempo de experiencia tipo storytelling con descripciones multilínea
-- 🧠 Sección de habilidades técnicas con iconos personalizados
-- 📱 Diseño 100% responsivo para cualquier dispositivo
-- 🌙 Modo oscuro/claro con persistencia y transiciones suaves
-- 🎮 Integración en tiempo real con Steam (estado de conexión y juego actual)
-- 🎵 Reproductor de música integrado
-- 📧 Formulario de contacto funcional con Netlify Functions
+- Grid de proyectos con detalle en modal
+- Timeline de experiencia
+- Skills técnicos con iconos
+- Dark/light mode con persistencia
+- Integración Steam en tiempo real
+- Reproductor de música
+- Formulario de contacto vía Netlify Functions
+- Responsivo
 
-
-## 🛠️ Tecnologías Utilizadas
-
-### Frontend
-- **React 19.2.0** - Framework principal con TypeScript
-- **TypeScript 5.6.2** - Tipado estático y seguridad de tipos
-- **Vite 7.1.8** - Herramienta de construcción y dev server ultrarrápido
-- **Tailwind CSS 4.1.14** - Framework de estilos con configuración v4
-- **Lucide React** - Librería de iconos modernos
-
-### Backend & APIs
-- **Netlify Functions** - Funciones serverless para APIs
-- **Steam Web API** - Integración en tiempo real con Steam
-- **Node.js** - Runtime para funciones serverless
-
-### Herramientas y Configuración
-- **ESLint** - Linter para calidad de código
-- **Bun** - Package manager y runtime ultrarrápido
-- **Git & GitHub** - Control de versiones
-- **LocalStorage API** - Persistencia de preferencias del usuario
-- **Fetch API** - Llamadas HTTP/HTTPS asíncronas
-
-## 🏗️ Estructura del Proyecto
+## Estructura
 
 ```plaintext
 Profile-developer-react/
@@ -105,42 +90,16 @@ Profile-developer-react/
 └── README.md                   # Documentación del proyecto
 ```
 
-## 🚦 Primeros Pasos
 
-### Requisitos Previos
-- Node.js 18+ instalado
-- npm o Bun (recomendado para mayor velocidad)
-- Cuenta de Steam (opcional, para integración Steam Status)
+## Setup
 
-### Instalación
+Requiere Node 18+. Bun recomendado.
 
-1. **Clona el repositorio:**
 ```bash
 git clone https://github.com/Devmike117/Profile-developer-react.git
 cd Profile-developer-react
+bun install   # o npm install
+bun run dev   # o npm run dev
 ```
 
-2. **Instala Bun (opcional pero recomendado):**
-```bash
-npm install -g bun
-```
-
-3. **Instala las dependencias:**
-```bash
-# Con npm
-npm install
-
-# O con Bun
-bun install
-```
-
-4. **Inicia el servidor de desarrollo:**
-```bash
-npm run dev
-```
-
-5. **Abre tu navegador en:**
-```
-http://localhost:3000
-```
-
+Servidor en `http://localhost:3000`.
