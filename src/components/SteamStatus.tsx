@@ -137,9 +137,7 @@ export const SteamStatus = () => {
                 }}
               />
             </div>
-          ) : (
-            <p className="text-gray-500 dark:text-gray-400 text-xs italic">No está jugando en este momento</p>
-          )}
+          ) : null}
         </div>
       )}
     </div>
