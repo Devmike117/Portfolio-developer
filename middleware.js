@@ -7,13 +7,48 @@ export default function middleware(request) {
   const lowerUA = userAgent.toLowerCase();
   const path = request.nextUrl.pathname;
 
-  // Permitir bots buenos
+  // Permitir bots buenos 
   const allowedSocialBots = [
-    'vercel', 'whatsapp', 'facebookexternalhit', 'twitterbot', 'linkedinbot',
-    'slackbot', 'discordbot', 'telegrambot', 'pinterest', 'skypeuripreview', 'applebot'
+    // Vercel
+    'vercel',
+
+    // Meta 
+    'facebookexternalhit',
+    'facebot',
+    'instagram',
+    'meta',
+    'meta-inspector',
+    'whatsapp',
+    'whatsapp/',
+    'whatsapp image',
+
+    // Twitter
+    'twitterbot',
+
+    // LinkedIn
+    'linkedinbot',
+
+    // Slack
+    'slackbot',
+
+    // Discord
+    'discordbot',
+
+    // Telegram
+    'telegrambot',
+
+    // Pinterest
+    'pinterest',
+
+    // Skype
+    'skypeuripreview',
+
+    // Apple
+    'applebot'
   ];
+
   if (allowedSocialBots.some(bot => lowerUA.includes(bot))) {
-    return undefined;
+    return undefined; // permitir bots buenos
   }
 
   // Bloquear rutas de WordPress / CMS
@@ -21,6 +56,7 @@ export default function middleware(request) {
     '/wp-admin', '/wp-login.php', '/wp-content', '/wp-includes',
     '/xmlrpc.php', '/administrator', '/user/login', '/cms', '/drupal'
   ];
+
   if (blockedPaths.some(p => path.startsWith(p))) {
     return new Response('Access denied - Suspicious path', {
       status: 403,
@@ -43,6 +79,7 @@ export default function middleware(request) {
     'selenium', 'puppeteer', 'playwright', 'scrapy', 'gptbot', 'chatgpt', 'claudebot',
     'claude-web', 'anthropic', 'google-extended', 'perplexitybot', 'ccbot', 'omgilibot'
   ];
+
   if (blockedAgents.some(bot => lowerUA.includes(bot))) {
     return new Response('Access denied - Bot detected', {
       status: 403,
@@ -69,8 +106,13 @@ export default function middleware(request) {
     });
   }
 
-  // Bloquear UAs demasiado cortos o sin patrones comunes
-  if (userAgent.length < 20 || (!lowerUA.includes('mozilla') && !lowerUA.includes('compatible'))) {
+  // Bloquear UAs inválidos sin bloquear bots buenos
+  if (
+    userAgent.length < 5 ||
+    lowerUA === '' ||
+    lowerUA === 'null' ||
+    lowerUA === 'undefined'
+  ) {
     return new Response('Access denied - Invalid UA', {
       status: 403,
       headers: { 'X-Blocked-Reason': 'Invalid user agent' }
