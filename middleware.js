@@ -1,14 +1,5 @@
-import { NextResponse } from 'next/server';
-
 export const config = {
   matcher: [
-    /*
-     * Excluye:
-     * - /_next/static (archivos estáticos)
-     * - /_next/image (optimización de imágenes)
-     * - /favicon.ico, /robots.txt, /sitemap.xml
-     * - archivos con extensión (imágenes, fuentes, etc.)
-     */
     '/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:png|jpg|jpeg|svg|webp|ico|css|js|woff2?)$).*)',
   ],
 };
@@ -17,7 +8,7 @@ export default function middleware(request) {
   try {
     const userAgent = request.headers.get('user-agent') || '';
     const lowerUA = userAgent.toLowerCase();
-    const path = request.nextUrl.pathname;
+    const { pathname } = new URL(request.url);
 
     // Permitir bots buenos
     const allowedSocialBots = [
@@ -39,7 +30,7 @@ export default function middleware(request) {
     ];
 
     if (allowedSocialBots.some((bot) => lowerUA.includes(bot))) {
-      return NextResponse.next();
+      return; // deja pasar la petición
     }
 
     // Bloquear rutas de WordPress / CMS
@@ -48,7 +39,7 @@ export default function middleware(request) {
       '/xmlrpc.php', '/administrator', '/user/login', '/cms', '/drupal',
     ];
 
-    if (blockedPaths.some((p) => path.startsWith(p))) {
+    if (blockedPaths.some((p) => pathname.startsWith(p))) {
       return new Response('Access denied - Suspicious path', {
         status: 403,
         headers: { 'X-Blocked-Reason': 'Blocked CMS path' },
@@ -120,10 +111,9 @@ export default function middleware(request) {
       });
     }
 
-    return NextResponse.next();
+    return; // sin problemas, deja pasar
   } catch (err) {
-    // Nunca dejar que el middleware crashee: si algo falla, deja pasar la petición
     console.error('Middleware error:', err);
-    return NextResponse.next();
+    return; // ante cualquier fallo inesperado, deja pasar la petición
   }
 }
