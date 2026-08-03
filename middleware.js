@@ -69,11 +69,13 @@ export default function middleware(request) {
       });
     }
 
-    // Bloquear navegadores falsos (Chrome)
+    // Bloquear navegadores falsos (Chrome) — solo versiones sospechosamente viejas.
+    // Sin tope máximo: Chrome saca versión nueva cada ~4 semanas, un límite
+    // superior fijo se vuelve obsoleto solo y bloquea usuarios reales.
     const chromeMatch = userAgent.match(/Chrome\/(\d+)\./);
     if (chromeMatch) {
       const chromeVersion = parseInt(chromeMatch[1], 10);
-      if (chromeVersion < 100 || chromeVersion > 150) {
+      if (chromeVersion < 100) {
         return new Response('Access denied - Fake Chrome version', {
           status: 403,
           headers: { 'X-Blocked-Reason': 'Fake browser version' },
