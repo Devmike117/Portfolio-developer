@@ -9,3 +9,5 @@ export * from './ChristmasLights';
 export * from './Stories';
 export { GridServices } from './GridServices';
 export { ModalService } from './ModalService';
+export { default as IndependenceBanner } from './IndependenceBanner';
+export { default as ConfettiPatrio } from './ConfettiPatrio';

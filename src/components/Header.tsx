@@ -97,7 +97,7 @@ export const Header = () => {
         </div>
 
         {/* Bio */}
-        <p className="text-balance text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-2">{overview}</p>
+        <p className="text-balance whitespace-pre-line text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-2">{overview}</p>
 
         {/* Hobbies */}
         {/* <p className="text-balance text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-2">{hobbies[0]}</p>

@@ -28,9 +28,9 @@ export const personalInfo = {
 	name: 'Devmike117',
 	age: null,
 	location: 'null',
-	occupation: 'Full-Stack Developer & Traveling Tech Enthusiast',
+	occupation: 'Software Engineer | Web Development | Cybersecurity',
 	overview:
-		'Egresado de Ing. en Sistemas Computacionales. Trabajo en desarrollo web, software y temas de ciberseguridad.',
+		'Experiencia en desarrollo de aplicaciones web, diseño de software y análisis de seguridad informática.',
 	hobbies: [
 		'Hobbies:',
 		// Y que viva the neighbourhood jaja ok no, bueno si pero no lo pongo :D
