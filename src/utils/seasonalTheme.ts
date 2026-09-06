@@ -10,7 +10,7 @@ export function getSeasonalTheme(date: Date = new Date()): SeasonalTheme {
 	const day = mxDate.getDate();
 
 	// Mes patrio: 1 al 16 de septiembre
-	if (month === 8 && day >= 1 && day <= 16) {
+	if (month === 9 && day >= 1 && day <= 16) {
 		return 'independencia';
 	}
 
