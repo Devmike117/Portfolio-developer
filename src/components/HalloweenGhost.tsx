@@ -27,6 +27,21 @@ const WEB_RINGS = RADII.map((radius) =>
 
 const BAT_WING = 'M60 30C50 14 30 8 4 16c8 5 10 12 8 20 7-5 14-4 18 4 5-8 12-9 19-4l11-6Z';
 
+const MAPLE_LEAF = 'M20 2l3 7 6-3-1 8 7-2-4 6 5 3-8 3 2 6-7-1v7h-2v-7l-7 1 2-6-8-3 5-3-4-6 7 2-1-8 6 3Z';
+
+const LEAVES = [
+	{ pos: 'left-[4%]', size: 'w-6', color: 'fill-orange-500', fall: 'animate-[leaf-fall_11s_linear_infinite] [animation-delay:-2s]', sway: 'animate-[leaf-sway_3s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[12%]', size: 'w-8', color: 'fill-red-600', fall: 'animate-[leaf-fall_14s_linear_infinite] [animation-delay:-8s]', sway: 'animate-[leaf-sway_4s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[22%]', size: 'w-5', color: 'fill-yellow-500', fall: 'animate-[leaf-fall_10s_linear_infinite] [animation-delay:-5s]', sway: 'animate-[leaf-sway_2.5s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[33%]', size: 'w-7', color: 'fill-amber-600', fall: 'animate-[leaf-fall_13s_linear_infinite] [animation-delay:-11s]', sway: 'animate-[leaf-sway_3.5s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[45%]', size: 'w-6', color: 'fill-orange-700', fall: 'animate-[leaf-fall_12s_linear_infinite] [animation-delay:-1s]', sway: 'animate-[leaf-sway_4.5s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[56%]', size: 'w-8', color: 'fill-orange-500', fall: 'animate-[leaf-fall_15s_linear_infinite] [animation-delay:-9s]', sway: 'animate-[leaf-sway_3s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[67%]', size: 'w-5', color: 'fill-red-600', fall: 'animate-[leaf-fall_9s_linear_infinite] [animation-delay:-4s]', sway: 'animate-[leaf-sway_2.8s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[77%]', size: 'w-7', color: 'fill-yellow-500', fall: 'animate-[leaf-fall_13s_linear_infinite] [animation-delay:-7s]', sway: 'animate-[leaf-sway_4s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[86%]', size: 'w-6', color: 'fill-amber-600', fall: 'animate-[leaf-fall_11s_linear_infinite] [animation-delay:-10s]', sway: 'animate-[leaf-sway_3.2s_ease-in-out_infinite_alternate]' },
+	{ pos: 'left-[94%]', size: 'w-8', color: 'fill-orange-700', fall: 'animate-[leaf-fall_16s_linear_infinite] [animation-delay:-3s]', sway: 'animate-[leaf-sway_5s_ease-in-out_infinite_alternate]' },
+];
+
 function Cobweb({ className }: { className: string }) {
 	return (
 		<svg className={`absolute w-40 h-40 sm:w-56 sm:h-56 text-slate-400 opacity-50 ${className}`} viewBox='0 0 190 190' fill='none'>
@@ -74,6 +89,18 @@ function Bat({ className, flip = false }: { className: string; flip?: boolean })
 				<circle cx='57.5' cy='22' r='1.2' className='fill-amber-300' />
 				<circle cx='62.5' cy='22' r='1.2' className='fill-amber-300' />
 			</svg>
+		</div>
+	);
+}
+
+function Leaf({ pos, size, color, fall, sway }: (typeof LEAVES)[number]) {
+	return (
+		<div className={`absolute top-0 motion-reduce:hidden ${pos} ${fall}`}>
+			<div className={sway}>
+				<svg className={size} viewBox='0 0 40 40' role='presentation'>
+					<path d={MAPLE_LEAF} className={`${color} stroke-black/20`} strokeWidth='0.8' strokeLinejoin='round' />
+				</svg>
+			</div>
 		</div>
 	);
 }
@@ -130,6 +157,14 @@ export function HalloweenGhost() {
 					0%, 100% { transform: translateY(-12px) rotate(-4deg); }
 					50% { transform: translateY(14px) rotate(4deg); }
 				}
+				@keyframes leaf-fall {
+					0% { transform: translate3d(0, -15vh, 0); }
+					100% { transform: translate3d(0, 115vh, 0); }
+				}
+				@keyframes leaf-sway {
+					0% { transform: translateX(-28px) rotate(-45deg); }
+					100% { transform: translateX(28px) rotate(45deg); }
+				}
 			`}</style>
 
 			<Cobweb className='top-0 left-0' />
@@ -140,6 +175,10 @@ export function HalloweenGhost() {
 			<Spider className='left-[14%] [animation-delay:-1s]' thread='h-28' />
 			<Spider className='left-[36%] scale-75 [animation-delay:-2.5s]' thread='h-16' />
 			<Spider className='right-[18%] [animation-delay:-3.5s]' thread='h-36' />
+
+			{LEAVES.map((leaf) => (
+				<Leaf key={leaf.pos} {...leaf} />
+			))}
 
 			<Bat className='top-[10%] w-14 animate-[bat-fly_10s_linear_infinite]' />
 			<Bat className='top-[28%] w-10 animate-[bat-fly_14s_linear_infinite] [animation-delay:-6s] [animation-direction:reverse]' flip />
