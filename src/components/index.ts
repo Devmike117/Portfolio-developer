@@ -6,6 +6,8 @@ export * from './GridExperience';
 export * from './GridSkills';
 export * from './SongPlayer';
 export * from './ChristmasLights';
+export * from './HalloweenGhost';
+export * from './DiaDeMuertos';
 export * from './Stories';
 export { GridServices } from './GridServices';
 export { ModalService } from './ModalService';

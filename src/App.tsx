@@ -13,6 +13,8 @@ import {
 	ChristmasLights,
 	IndependenceBanner,
 	ConfettiPatrio,
+	HalloweenGhost,
+	DiaDeMuertos,
 } from './components';
 import { getSeasonalTheme } from './utils/seasonalTheme';
 import type { Project, Service } from './types';
@@ -64,6 +66,10 @@ function App() {
 					<ConfettiPatrio />
 				</>
 			)}
+
+			{/* Tema de Halloween */}
+			{seasonalTheme === 'halloween' && <HalloweenGhost />}
+			{seasonalTheme === 'dia-de-muertos' && <DiaDeMuertos />}
 
 			<div className='bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors duration-300'>
 				<main className='container py-10'>

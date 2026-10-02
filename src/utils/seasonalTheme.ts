@@ -1,5 +1,10 @@
 // src/utils/seasonalTheme.ts
-export type SeasonalTheme = 'christmas' | 'independencia' | null;
+export type SeasonalTheme =
+	| 'christmas'
+	| 'independencia'
+	| 'halloween'
+	| 'dia-de-muertos'
+	| null;
 
 export function getSeasonalTheme(date: Date = new Date()): SeasonalTheme {
 	// Convertir a fecha de Ciudad de México para evitar desfases por zona horaria
@@ -8,6 +13,16 @@ export function getSeasonalTheme(date: Date = new Date()): SeasonalTheme {
 	);
 	const month = mxDate.getMonth() + 1; // 1-12
 	const day = mxDate.getDate();
+
+	// Dia de Muertos: 1 y 2 de noviembre
+	if (month === 11 && day >= 1 && day <= 2) {
+		return 'dia-de-muertos';
+	}
+
+	// Halloween: todo octubre
+	if (month === 10 && day >= 1 && day <= 31) {
+		return 'halloween';
+	}
 
 	// Mes patrio: 1 al 16 de septiembre
 	if (month === 9 && day >= 1 && day <= 16) {
